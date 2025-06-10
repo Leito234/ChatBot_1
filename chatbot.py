@@ -8,7 +8,7 @@ MODELOS = ['llama3-70b-8192', 'llama3-8b-8192']
 # CONFIGURAR PAGINA
 def configurar_pagina():
     st.set_page_config(page_title="Mi primer ChatBot con Python")
-    st.title("Welcome To ChatCDT")
+    st.title("🤖Welcome To ChatCDT🤖")
 
 
 # CREAR UN CLIENTE GROQ
@@ -29,6 +29,8 @@ def mostrar_sidebar():
 def inicializar_estado_chat():
     if "mensajes" not in st.session_state:
         st.session_state.mensajes = []
+        mensaje_bienvenida = "Que onda pa!! Aca te saludo el ChatBotCDT mas CDT que vas a encontrar en Argentina"
+        st.session_state.mensajes.append({"role": "assistant", "content": mensaje_bienvenida})
 
 
 # MOSTRAR MENSAJES PREVIOS

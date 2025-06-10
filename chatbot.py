@@ -84,6 +84,10 @@ def ejecutar_chat():
 
         agregar_mensajes_previos("assistant",respuesta_contenido)
         mostrar_mensajes("assistant",respuesta_contenido)
+        # BOTÓN PARA REINICIAR EL CHAT
+    if st.sidebar.button("Limpiar chat"):
+        st.session_state.mensajes = []  # Reinicia el historial
+        st.rerun()
         
 # EJECUTAR LA APP
 if __name__ == "__main__":

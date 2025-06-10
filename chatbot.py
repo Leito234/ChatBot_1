@@ -8,7 +8,7 @@ MODELOS = ['llama3-8b-8192', 'llama3-70b-8192']
 # CONFIGURAR PAGINA
 def configurar_pagina():
     st.set_page_config(page_title="Mi primer ChatBot con Python")
-    st.title("Bienvenidos a mi primer Chatbot!!!")
+    st.title("Welcome To ChatCDT")
 
 
 # CREAR UN CLIENTE GROQ
@@ -19,8 +19,8 @@ def crear_cliente_groq():
 
 # MOSTRAR LA BARRA LATERAL
 def mostrar_sidebar():
-    st.sidebar.title("Elegi tu modelo de IA favorito")
-    modelo = st.sidebar.selectbox("Elegi tu modelo", MODELOS, index=0)
+    st.sidebar.title("Elegi el modelo de IA que mas te agrade")
+    modelo = st.sidebar.selectbox("Elige el modelo", MODELOS, index=0)
     st.write(f"**Elegiste el modelo** {modelo}")
     return modelo
 
@@ -82,20 +82,7 @@ def ejecutar_chat():
 
         agregar_mensajes_previos("assistant",respuesta_contenido)
         mostrar_mensajes("assistant",respuesta_contenido)
-
-
-
-
-# def ejecutar_chat():
-#     configurar_pagina()
-#     modelo = mostrar_sidebar()
-#     print(modelo)
-
-#     inicializar_estado_chat()
-#     mensaje_usuario = obtener_mensaje_usuario()
-#     print(mensaje_usuario)
-#     obtener_mensajes_previos()
-
+        
 # EJECUTAR LA APP
 if __name__ == "__main__":
     ejecutar_chat()
